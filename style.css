@@ -1,0 +1,387 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#050816;
+    color:#ffffff;
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.bg-animation{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+
+    background:
+    radial-gradient(circle at top right,#00e5ff22,transparent 30%),
+    radial-gradient(circle at bottom left,#00ffcc18,transparent 35%),
+    #050816;
+
+    z-index:-5;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+
+    width:100%;
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    position:fixed;
+
+    top:0;
+
+    background:rgba(5,8,22,.85);
+
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+
+    border-bottom:1px solid rgba(0,229,255,.15);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    color:#00e5ff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+}
+
+nav ul li{
+
+    margin-left:35px;
+
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#00e5ff;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:120px 8% 60px;
+
+}
+
+.hero-left{
+
+    width:55%;
+
+}
+
+.small-text{
+
+    color:#00ffcc;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    font-size:14px;
+
+}
+
+.hero-left h3{
+
+    font-size:30px;
+
+    font-weight:400;
+
+}
+
+.hero-left h1{
+
+    font-size:72px;
+
+    color:#00e5ff;
+
+    margin-top:10px;
+
+    line-height:85px;
+
+}
+
+.hero-left h2{
+
+    margin-top:15px;
+
+    font-size:34px;
+
+    color:#00ffcc;
+
+}
+
+.description{
+
+    margin-top:25px;
+
+    color:#cfcfcf;
+
+    line-height:30px;
+
+    max-width:700px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.buttons{
+
+    display:flex;
+
+    margin-top:40px;
+
+    gap:20px;
+
+}
+
+.btn{
+
+    padding:15px 35px;
+
+    background:#00e5ff;
+
+    color:#050816;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px #00e5ff;
+
+}
+
+.btn2{
+
+    padding:15px 35px;
+
+    border:2px solid #00e5ff;
+
+    color:#00e5ff;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+}
+
+.btn2:hover{
+
+    background:#00e5ff;
+
+    color:#050816;
+
+    box-shadow:0 0 25px #00e5ff;
+
+}
+
+/* ===========================
+   SOCIAL ICONS
+=========================== */
+
+.social{
+
+    margin-top:40px;
+
+}
+
+.social a{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:50px;
+
+    height:50px;
+
+    margin-right:15px;
+
+    border:2px solid #00e5ff;
+
+    border-radius:50%;
+
+    color:#00e5ff;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+    font-size:20px;
+
+}
+
+.social a:hover{
+
+    background:#00e5ff;
+
+    color:#050816;
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 20px #00e5ff;
+
+}
+
+/* ===========================
+   RIGHT PROFILE
+=========================== */
+
+.hero-right{
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.profile-card{
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    border:4px solid #00e5ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    box-shadow:0 0 50px #00e5ff55;
+
+}
+
+.circle{
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    border:2px dashed #00ffcc;
+
+    animation:rotate 20s linear infinite;
+
+}
+
+.profile-logo{
+
+    font-size:70px;
+
+    color:#00e5ff;
+
+    font-weight:700;
+
+}
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
