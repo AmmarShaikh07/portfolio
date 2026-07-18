@@ -1543,3 +1543,46 @@ opacity:1;
 transform:translateY(0);
 
 }
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+#progress-bar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0%;
+
+background:#00E5FF;
+
+z-index:99999;
+
+box-shadow:0 0 15px #00E5FF;
+
+}
+
+/* ==========================================
+   LOGO ANIMATION
+========================================== */
+
+.logo{
+
+transition:1s;
+
+}
+
+/* ==========================================
+   SMOOTH TRANSITION
+========================================== */
+
+section{
+
+transition:.5s;
+
+}
