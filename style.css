@@ -1514,3 +1514,32 @@ header nav a.active::after{
     background:#00E5FF;
 
 }
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+.skill-card,
+.project-box,
+.about-card,
+.about-text,
+.timeline-item,
+.certificate-card,
+.resume-card,
+.contact-form,
+.github-card{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
