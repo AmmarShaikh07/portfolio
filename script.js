@@ -183,3 +183,212 @@ console.log("%cWelcome to Shaikh Ammar's Portfolio 💻",
 console.log("%cCyber Security Portfolio Loaded Successfully",
 
 "color:#00FFC6;font-size:14px;");
+/* ==========================================
+   TYPING EFFECT
+========================================== */
+
+const typingText = document.querySelector(".typing");
+
+const words = [
+
+    "Aspiring Cyber Security Engineer",
+
+    "Ethical Hacking Learner",
+
+    "Web Developer",
+
+    "Problem Solver"
+
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const currentWord = words[wordIndex];
+
+    if(!deleting){
+
+        typingText.textContent =
+        currentWord.substring(0,charIndex++);
+
+        if(charIndex > currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1500);
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        typingText.textContent =
+        currentWord.substring(0,charIndex--);
+
+        if(charIndex < 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex >= words.length){
+
+                wordIndex = 0;
+
+            }
+
+        }
+
+    }
+
+    setTimeout(typeEffect,deleting ? 40 : 90);
+
+}
+
+typeEffect();
+
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const revealElements = document.querySelectorAll(
+
+".skill-card,.project-box,.about-card,.about-text,.timeline-item,.certificate-card,.resume-card,.contact-form,.github-card"
+
+);
+
+function revealOnScroll(){
+
+    const trigger = window.innerHeight * .85;
+
+    revealElements.forEach(element=>{
+
+        const top = element.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            element.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealOnScroll);
+
+revealOnScroll();
+
+
+/* ==========================================
+   PROJECT CARD HOVER
+========================================== */
+
+const projects = document.querySelectorAll(".project-box");
+
+projects.forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        card.style.background=
+
+        `radial-gradient(circle at ${x}px ${y}px,
+
+        rgba(0,229,255,.18),
+
+        rgba(16,23,42,.95))`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.background="rgba(255,255,255,.05)";
+
+    });
+
+});
+
+
+/* ==========================================
+   SKILL CARD FLOAT
+========================================== */
+
+const skillCards=document.querySelectorAll(".skill-card");
+
+skillCards.forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform="translateY(-15px)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0px)";
+
+    });
+
+});
+
+
+/* ==========================================
+   PARALLAX HERO
+========================================== */
+
+window.addEventListener("mousemove",(e)=>{
+
+    const hero=document.querySelector(".hero");
+
+    const x=(window.innerWidth/2-e.pageX)/35;
+
+    const y=(window.innerHeight/2-e.pageY)/35;
+
+    hero.style.transform=
+
+    `translate(${x}px,${y}px)`;
+
+});
+
+
+/* ==========================================
+   FOOTER YEAR
+========================================== */
+
+const year = new Date().getFullYear();
+
+const footer = document.querySelector("footer p:nth-child(3)");
+
+if(footer){
+
+footer.innerHTML=
+
+`© ${year} All Rights Reserved.`;
+
+}
+
+
+/* ==========================================
+   CONSOLE MESSAGE
+========================================== */
+
+console.log(
+
+"%cAccess Granted ✔",
+
+"color:#00ff99;font-size:16px;font-weight:bold"
+
+);
