@@ -392,3 +392,164 @@ console.log(
 "color:#00ff99;font-size:16px;font-weight:bold"
 
 );
+/* ==========================================
+   SCROLL PROGRESS BAR
+========================================== */
+
+const progressBar = document.createElement("div");
+progressBar.id = "progress-bar";
+document.body.appendChild(progressBar);
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+/* ==========================================
+   TERMINAL BLINK EFFECT
+========================================== */
+
+const terminalCursor = document.querySelector(".blink");
+
+if (terminalCursor) {
+
+    setInterval(() => {
+
+        terminalCursor.style.visibility =
+            terminalCursor.style.visibility === "hidden"
+                ? "visible"
+                : "hidden";
+
+    }, 500);
+
+}
+
+/* ==========================================
+   FLOATING ANIMATION
+========================================== */
+
+const terminal = document.querySelector(".terminal");
+
+let angle = 0;
+
+function floatingTerminal() {
+
+    angle += 0.02;
+
+    if (terminal) {
+
+        terminal.style.transform =
+            `translateY(${Math.sin(angle) * 8}px)`;
+
+    }
+
+    requestAnimationFrame(floatingTerminal);
+
+}
+
+floatingTerminal();
+
+/* ==========================================
+   ACTIVE SECTION HIGHLIGHT
+========================================== */
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.2
+
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    observer.observe(section);
+
+});
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        alert("✅ Thank you! Your message has been received.");
+
+        contactForm.reset();
+
+    });
+
+}
+
+/* ==========================================
+   KEYBOARD SHORTCUT
+========================================== */
+
+document.addEventListener("keydown", function (e) {
+
+    if (e.key.toLowerCase() === "h") {
+
+        document.getElementById("home")
+            ?.scrollIntoView({ behavior: "smooth" });
+
+    }
+
+});
+
+/* ==========================================
+   EASTER EGG
+========================================== */
+
+let logo = document.querySelector(".logo");
+
+if (logo) {
+
+    logo.addEventListener("click", () => {
+
+        logo.style.transform = "rotate(360deg)";
+
+        logo.style.transition = "1s";
+
+        console.log("🛡️ Cyber Mode Activated");
+
+    });
+
+}
+
+/* ==========================================
+   PORTFOLIO READY
+========================================== */
+
+console.log(
+    "%cPortfolio Loaded Successfully 🚀",
+    "color:#00E5FF;font-size:18px;font-weight:bold;"
+);
+
+console.log(
+    "%cDesigned by Shaikh Ammar",
+    "color:#00FFC6;font-size:14px;"
+);
